@@ -39,6 +39,9 @@ function createCactus() {
 	// creates a div and stores it inside cactus
 	const cactus = document.createElement('div');
 	let cactusPosition = 1000;
+	let randomTime = Math.random() * 6000;
+
+	console.log(randomTime);
 
 	// assign a class to the cactus div
 	cactus.classList.add('cactus');
@@ -54,6 +57,8 @@ function createCactus() {
 			cactus.style.left = cactusPosition + 'px';
 		}
 	}, 20);
+
+	setTimeout(createCactus, randomTime);
 }
 
 createCactus();

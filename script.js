@@ -46,8 +46,13 @@ function createCactus() {
 	background.appendChild(cactus);
 
 	let leftInterval = setInterval(() => {
-		cactusPosition -= 10; // movement speed
-		cactus.style.left = cactusPosition + 'px';
+		if (cactusPosition < -60) {
+			clearInterval(leftInterval);
+			background.removeChild(cactus);
+		} else {
+			cactusPosition -= 10; // movement speed
+			cactus.style.left = cactusPosition + 'px';
+		}
 	}, 20);
 }
 
